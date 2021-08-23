@@ -1,8 +1,12 @@
 .toolbar {
-    width: 87%;
-    margin: auto;
     padding: 0;
+    /* z-index: 999; */
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .moon {
     padding-left: 20px;
+}
+.inside-toolbar {
+    width: 87%;
+    margin: auto;
 }

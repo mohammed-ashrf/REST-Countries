@@ -6,6 +6,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,11 +17,13 @@ import { CountriesService } from './services/countries.service';
 import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import 'hammerjs';
+import { CountrydetailsComponent } from './countrydetails/countrydetails.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
+    CountrydetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,11 +32,14 @@ import 'hammerjs';
     FlexLayoutModule,
     MatIconModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    AppRoutingModule,
+    MatButtonModule
   ],
   providers: [
     CountriesService,
-    ProcessHttpmsgService
+    ProcessHttpmsgService,
+    HomeComponent
   ],
   bootstrap: [AppComponent]
 })

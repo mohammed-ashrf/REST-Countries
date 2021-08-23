@@ -1,9 +1,11 @@
 .container {
     background-color: hsl(0, 0%, 98%);
+    padding-top: 40px;
 }
 .search {
     width: 87%;
     margin: auto;
+    padding-bottom: 40px;
 }
 #input {
     width: 65%;
@@ -11,6 +13,7 @@
     border: none;
     border-radius: 7px;
     outline: none;
+    box-shadow: 2px 2px 2px 1px #888888;
 }
 #region {
     width: 30%;
@@ -18,9 +21,38 @@
     border: none;
     border-radius: 7px;
     outline: none;
+    box-shadow: 2px 2px 2px 1px #888888;
+    cursor: pointer;
 }
 .option {
     border: none;
     border-radius: 7px;
     outline: none;
+    cursor: pointer;
+}
+.country {
+    width: 300px;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.countries-container {
+    box-sizing: border-box;
+    width: 87%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.flag {
+    height: 200px;
+    /* background-color: hsl(0, 0%, 100%); */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.information {
+    margin-left: 23px;
+}
+.grey {
+    color: hsl(0, 0%, 52%);;
 }
