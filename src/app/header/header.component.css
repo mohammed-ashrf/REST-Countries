@@ -1,7 +1,8 @@
 .toolbar {
     padding: 0;
     /* z-index: 999; */
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 2px #000;
+    background-color: var(--element-color);
 }
 .moon {
     padding-left: 20px;
@@ -9,4 +10,11 @@
 .inside-toolbar {
     width: 87%;
     margin: auto;
+}
+.inside-toolbar h1{
+    color: var(--text-color);
+}
+.text {
+    cursor: pointer;
+    color: var(--text-color);
 }

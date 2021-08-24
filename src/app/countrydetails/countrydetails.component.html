@@ -1,34 +1,38 @@
-<div *ngIf="country" 
-  fxLayout="column"
-  fxLayoutAlign="space-evenly start"
-  class="countainer">
+<div class="mother-countainer"> 
+  <div *ngIf="country" 
+    fxLayout="column"
+    fxLayoutAlign="space-evenly start"
+    class="countainer">
 
 
-  <button class="button" mat-button (click)="goBack()">BACK</button>
-  <div *ngIf="country" fxLayout="row" fxLayoutAlign="space-between center">
-    <img src={{country[0].flag}} class="flag" alt="flag">
-    <div fxLayout="column" fxLayoutAlign="center start" class="information">
-      <h1>{{country[0].name}}</h1>
-      <div fxLayout="row">
-        <div>
-          <p>Native Name: <span class="gray">{{country[0].nativeName}}</span></p>
-          <p>Population: <span class="gray">{{country[0].population}}</span></p>
-          <p>Region: <span class="gray">{{country[0].region}}</span></p>
-          <p>Sub Region: <span class="gray">{{country[0].subregion}}</span></p>
-          <p>Capital: <span class="gray">{{country[0].capital}}</span></p>
+    <button class="button" mat-button (click)="goBack()" fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="space-between center">
+      <svg class="Svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path class="Svg" d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/></svg>      BACK
+    </button>
+    <div *ngIf="country" fxLayout="row" fxLayoutAlign="space-between center">
+      <img src={{country[0].flag}} class="flag" alt="flag">
+      <div fxLayout="column" fxLayoutAlign="center start" class="information">
+        <h1 class="paragragh">{{country[0].name}}</h1>
+        <div fxLayout="row">
+          <div>
+            <p class="paragragh">Native Name: <span class="gray">{{country[0].nativeName}}</span></p>
+            <p class="paragragh">Population: <span class="gray">{{country[0].population}}</span></p>
+            <p class="paragragh">Region: <span class="gray">{{country[0].region}}</span></p>
+            <p class="paragragh">Sub Region: <span class="gray">{{country[0].subregion}}</span></p>
+            <p class="paragragh">Capital: <span class="gray">{{country[0].capital}}</span></p>
+          </div>
+          <div class="information-2nd">
+            <p class="paragragh">Top Level Domain: <span class="gray">{{country[0].topLevelDomain}}</span></p>
+            <p class="paragragh">Currencies: <span *ngFor="let Currency of country[0].currencies" class="gray"> {{Currency.name}},</span></p>
+            <p class="paragragh">Languages: <span *ngFor="let Language of country[0].languages" class="gray">{{Language.name}},</span></p>
+          </div>
         </div>
-        <div class="information-2nd">
-          <p>Top Level Domain: <span class="gray">{{country[0].topLevelDomain}}</span></p>
-          <p>Currencies: <span *ngFor="let Currency of country[0].currencies" class="gray"> {{Currency.name}},</span></p>
-          <p>Languages: <span *ngFor="let Language of country[0].languages" class="gray">{{Language.name}},</span></p>
+        <div fxFlex>
+          <p class="paragragh">
+            Border Countries: 
+            <button mat-button *ngFor="let Border of country[0].borders" class="gray button">{{Border}}</button>
+          </p>
         </div>
-      </div>
-      <div fxFlex>
-        <p>
-          Border Countries: 
-          <button mat-button *ngFor="let Border of country[0].borders" class="gray button">{{Border}}</button>
-        </p>
       </div>
     </div>
   </div>
-</div>
+</div>  

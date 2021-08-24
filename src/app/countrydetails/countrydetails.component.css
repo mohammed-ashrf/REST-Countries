@@ -1,11 +1,16 @@
+.mother-countainer {
+    background-color: var(--background-color);
+}
 .countainer {
     width:  87%;
     margin: auto;
-    height: 600px;
+    height: 599px;
 }
 .button {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: var(--element-color);
+    color: var(--text-color);
+    border-radius: 10px;
 }
 .flag {
     width: 470px;
@@ -21,5 +26,8 @@
     left: 20%;
 }
 .gray {
-    color:  hsl(0, 0%, 52%);
+    color:  grey;
+}
+.paragragh {
+    color: var(--text-color);
 }
