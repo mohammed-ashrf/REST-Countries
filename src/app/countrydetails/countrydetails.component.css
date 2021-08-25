@@ -1,10 +1,76 @@
+@media (min-width: 958px) {
+    .flag {
+        width: 470px;
+    }
+}
+@media (max-width: 1170px) {
+    .information-2nd {
+        position: relative;
+        left: 0;
+    }
+    .flag {
+        width: 470px;
+    }
+}
+@media (max-width: 958px) {
+    .button {
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        background-color: var(--element-color);
+        color: var(--text-color);
+        border-radius: 10px;
+    }
+    .mother-countainer {
+        background-color: var(--background-color);
+        height: max-content;
+    }
+    .flag {
+        width: 470px;
+    }
+}
+@media (max-width: 599px) {
+    .information-2nd {
+        position: relative;
+        left: 0px;
+    }
+    .flag {
+        width: 400px;
+    }
+    .information {
+        display: flex;
+        float: right;
+        position: relative;
+        left: 10%;
+        margin: 0;
+        width: min-content;
+    }
+    .border {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 5px;
+        margin-bottom: 50px;
+    }
+    .text-information{
+        width: min-content;
+    }
+}
+@media (max-width: 440px) {
+    .information-2nd {
+        position: relative;
+        left: 0;
+    }
+    .flag {
+        width: 100%;
+    }
+}
 .mother-countainer {
-    background-color: var(--background-color);
+    background-color: var(--background-color-two);
+    height: 100%;
 }
 .countainer {
     width:  87%;
     margin: auto;
-    height: 599px;
+    height: max-content;
 }
 .button {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -12,18 +78,22 @@
     color: var(--text-color);
     border-radius: 10px;
 }
-.flag {
-    width: 470px;
+.back {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.border {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 .information {
     display: flex;
     float: right;
     position: relative;
     left: 10%;
-}
-.information-2nd {
-    position: relative;
-    left: 20%;
+    margin: 0;
 }
 .gray {
     color:  grey;

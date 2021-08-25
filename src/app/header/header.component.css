@@ -1,11 +1,22 @@
+@media (max-width: 520px) {
+    .text {
+        display: none;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+}
 .toolbar {
     padding: 0;
     /* z-index: 999; */
-    box-shadow: 2px 2px 2px 2px #000;
+    box-shadow: 2px 2px 2px 1px #888888;
     background-color: var(--element-color);
 }
 .moon {
-    padding-left: 20px;
+    display: var(--display-one);
+}
+.sun {
+    display: var(--display-two);
+    margin-right: 10px;
 }
 .inside-toolbar {
     width: 87%;
@@ -13,6 +24,9 @@
 }
 .inside-toolbar h1{
     color: var(--text-color);
+    text-align: center;
+    justify-content: center;
+    margin: 15px;
 }
 .text {
     cursor: pointer;

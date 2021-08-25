@@ -5,14 +5,22 @@
     class="countainer">
 
 
-    <button class="button" mat-button (click)="goBack()" fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="space-between center">
+    <button class="button back" mat-button (click)="goBack()" fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="space-between center">
       <svg class="Svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path class="Svg" d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/></svg>      BACK
     </button>
-    <div *ngIf="country" fxLayout="row" fxLayoutAlign="space-between center">
+    <div *ngIf="country" 
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayout.sm="column"
+      fxLayoutAlign="space-between center"
+      fxLayoutAlign.xs="space-between start"
+      fxLayoutAlign.sm="space-between center">
       <img src={{country[0].flag}} class="flag" alt="flag">
       <div fxLayout="column" fxLayoutAlign="center start" class="information">
         <h1 class="paragragh">{{country[0].name}}</h1>
-        <div fxLayout="row">
+        <div fxLayout="row wrap"
+          fxLayout.xs="column"
+          class="text-information">
           <div>
             <p class="paragragh">Native Name: <span class="gray">{{country[0].nativeName}}</span></p>
             <p class="paragragh">Population: <span class="gray">{{country[0].population}}</span></p>
@@ -26,11 +34,13 @@
             <p class="paragragh">Languages: <span *ngFor="let Language of country[0].languages" class="gray">{{Language.name}},</span></p>
           </div>
         </div>
-        <div fxFlex>
+        <div fxFlex fxLayout="column">
           <p class="paragragh">
             Border Countries: 
-            <button mat-button *ngFor="let Border of country[0].borders" class="gray button">{{Border}}</button>
           </p>
+          <div fxLayout="row wrap" fxLayputAlign="space-between start">
+            <button mat-button *ngFor="let Border of country[0].borders" class="gray button border">{{Border}}</button>
+          </div>
         </div>
       </div>
     </div>

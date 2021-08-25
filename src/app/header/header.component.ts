@@ -9,11 +9,22 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  lightDark:string = "Dark";
   ngOnInit() {
   }
 
   toggle(){
     console.log("clicked");
+    switch (this.lightDark) {
+      case 'Dark':
+        this.lightDark = "Light";
+        break;
+      case 'Light':
+        this.lightDark = "Dark";
+        break;
+      default:
+        console.log("defult");
+    }
     document.body.classList.toggle("dark-Theme");
   }
 }
