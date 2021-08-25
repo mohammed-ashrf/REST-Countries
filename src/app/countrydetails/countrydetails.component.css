@@ -64,7 +64,7 @@
     }
 }
 .mother-countainer {
-    background-color: var(--background-color-two);
+    background-color: var(--background-color);
     min-height: calc(100vh - 64px);
 }
 .countainer {
