@@ -27,6 +27,7 @@
     text-align: center;
     justify-content: center;
     margin: 15px;
+    cursor: pointer;
 }
 .text {
     cursor: pointer;

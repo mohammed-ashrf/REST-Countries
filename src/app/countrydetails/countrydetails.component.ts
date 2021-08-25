@@ -16,6 +16,9 @@ export class CountrydetailsComponent implements OnInit {
   next: string;
   errMess: string;
   country;
+  borderCountry;
+  code;
+  borders=[];
   constructor(private route: ActivatedRoute,
     private location: Location,
     private countriesService: CountriesService,
@@ -24,8 +27,18 @@ export class CountrydetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
-      .subscribe(country => { 
+      .subscribe(country => {
+        this.borders = [];
         this.country = country;
+        this.code = this.country[0].borders;
+        for(let code of this.code){
+          this.countriesService.getCountryByCode(code).subscribe(country => {
+            this.borders.push(country);
+            // this.borderCountry = country;
+            // console.log(country);
+            // console.log(this.borders);
+          })
+        }
         console.log(country);
         console.log(country[0].name);
         this.visibility = 'shown';},
@@ -36,4 +49,9 @@ export class CountrydetailsComponent implements OnInit {
     this.location.back();
     this.homeComponent.visible = true;
   }
+  // onClick() {
+  //   if (this.borders.length ){
+  //     this.borders = [];
+  //   }
+  // }
 }

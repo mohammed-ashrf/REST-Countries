@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   dropdownMenu;
   dropdownMenuValue;
   countryName;
+  countriesCopy;
   isClicked:boolean = false;
   visible:boolean = true;
   constructor(private countriesService: CountriesService) { }
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.countriesService.getCountries()
       .subscribe( countries => {
         this.countries = countries;
+        this.countriesCopy = countries;
         this.name = countries[0]['name'];
         console.log(this.countries);
         console.log(this.name);

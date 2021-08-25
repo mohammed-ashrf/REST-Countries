@@ -29,4 +29,10 @@ export class CountriesService {
             .get(url + region)
             .pipe(catchError(this.processHTTPMsgService.handleError));
   }
+  getCountryByCode(code) {
+    let url = `https://restcountries.eu/rest/v2/alpha/`
+      return this.http
+              .get(url + code)
+              .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
 }

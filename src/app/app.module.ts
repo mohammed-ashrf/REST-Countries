@@ -39,7 +39,8 @@ import { CountrydetailsComponent } from './countrydetails/countrydetails.compone
   providers: [
     CountriesService,
     ProcessHttpmsgService,
-    HomeComponent
+    HomeComponent,
+    CountrydetailsComponent
   ],
   bootstrap: [AppComponent]
 })
