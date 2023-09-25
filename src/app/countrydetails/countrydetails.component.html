@@ -22,7 +22,6 @@
           fxLayout.xs="column"
           class="text-information">
           <div>
-            <p class="paragragh">Native Name: <span class="gray">{{country[0].nativeName.official}}</span></p>
             <p class="paragragh">Population: <span class="gray">{{country[0].population}}</span></p>
             <p class="paragragh">Region: <span class="gray">{{country[0].region}}</span></p>
             <p class="paragragh">Sub Region: <span class="gray">{{country[0].subregion}}</span></p>
@@ -30,8 +29,8 @@
           </div>
           <div class="information-2nd">
             <p class="paragragh">Top Level Domain: <span class="gray">{{country[0].topLevelDomain}}</span></p>
-            <p class="paragragh">Currencies: <span *ngFor="let Currency of country[0].currencies" class="gray"> {{Currency.name}},</span></p>
-            <p class="paragragh">Languages: <span *ngFor="let Language of country[0].languages" class="gray">{{Language.name}},</span></p>
+            <p class="paragragh">Currencies: <span *ngFor="let Currency of Object.keys(country[0].currencies)" class="gray"> {{country[0].currencies.Currency.name}},</span></p>
+            <p class="paragragh">Languages: <span *ngFor="let Language of Object.keys(country[0].languages)" class="gray">{{country[0].languages.Language.name}},</span></p>
           </div>
         </div>
         <div fxFlex fxLayout="column">
