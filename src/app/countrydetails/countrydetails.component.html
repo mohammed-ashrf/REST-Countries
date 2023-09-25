@@ -38,7 +38,7 @@
             Border Countries: 
           </p>
           <div fxLayout="row wrap" fxLayputAlign="space-between start">
-            <button mat-button *ngFor="let Border of borders" class="gray button border" [routerLink]="['/countrydetail',Border.name]">{{Border.name}}</button>
+            <button mat-button *ngFor="let Border of borders" class="gray button border" [routerLink]="['/countrydetail',Border.name.official]">{{Border.name.official}}</button>
           </div>
         </div>
       </div>
