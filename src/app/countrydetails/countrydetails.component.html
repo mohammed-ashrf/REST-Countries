@@ -15,7 +15,7 @@
       fxLayoutAlign="space-between center"
       fxLayoutAlign.xs="space-between start"
       fxLayoutAlign.sm="space-between center">
-      <img src={{country[0].flags.png}} class="flag" alt="flag">
+      <img src={{country[0].flags.png}} class="flag" alt={{country[0].flags.alt}}>
       <div fxLayout="column" fxLayoutAlign="center start" class="information">
         <h1 class="paragragh">{{country[0].name.official}}</h1>
         <div fxLayout="row wrap"
@@ -29,8 +29,8 @@
           </div>
           <div class="information-2nd">
             <p class="paragragh">Top Level Domain: <span class="gray">{{country[0].topLevelDomain}}</span></p>
-            <p class="paragragh">Currencies: <span *ngFor="let Currency of currencies" class="gray"> {{country[0].currencies.Currency.name}},</span></p>
-            <p class="paragragh">Languages: <span *ngFor="let Language of languages" class="gray">{{country[0].languages.Language.name}},</span></p>
+            <p class="paragragh">Currencies: <span *ngFor="let Currency of currencies" class="gray"> {{Currency}},</span></p>
+            <p class="paragragh">Languages: <span *ngFor="let Language of languages" class="gray">{{Language}},</span></p>
           </div>
         </div>
         <div fxFlex fxLayout="column">
