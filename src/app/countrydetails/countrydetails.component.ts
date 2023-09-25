@@ -26,7 +26,7 @@ export class CountrydetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
+      .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name'].official); }))
       .subscribe(country => {
         this.borders = [];
         this.country = country;

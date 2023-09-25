@@ -15,14 +15,14 @@
       fxLayoutAlign="space-between center"
       fxLayoutAlign.xs="space-between start"
       fxLayoutAlign.sm="space-between center">
-      <img src={{country[0].flag}} class="flag" alt="flag">
+      <img src={{country[0].flags.png}} class="flag" alt="flag">
       <div fxLayout="column" fxLayoutAlign="center start" class="information">
-        <h1 class="paragragh">{{country[0].name}}</h1>
+        <h1 class="paragragh">{{country[0].name.official}}</h1>
         <div fxLayout="row wrap"
           fxLayout.xs="column"
           class="text-information">
           <div>
-            <p class="paragragh">Native Name: <span class="gray">{{country[0].nativeName}}</span></p>
+            <p class="paragragh">Native Name: <span class="gray">{{country[0].nativeName.official}}</span></p>
             <p class="paragragh">Population: <span class="gray">{{country[0].population}}</span></p>
             <p class="paragragh">Region: <span class="gray">{{country[0].region}}</span></p>
             <p class="paragragh">Sub Region: <span class="gray">{{country[0].subregion}}</span></p>
