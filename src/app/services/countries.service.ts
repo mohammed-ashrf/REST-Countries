@@ -18,19 +18,19 @@ export class CountriesService {
     .pipe(catchError(this.processHTTPMsgService.handleError));
   }
   getCountry(name: string) {
-    let url = `https://restcountries.eu/rest/v2/name/`; 
+    let url = `https://restcountries.com/v3.1/name/`; 
       return this.http
             .get(url + name)
             .pipe(catchError(this.processHTTPMsgService.handleError));
   }
   getCountryByRegion(region) {
-    let url = `https://restcountries.eu/rest/v2/region/`; 
+    let url = `https://restcountries.com/v3.1/region/`; 
       return this.http
             .get(url + region)
             .pipe(catchError(this.processHTTPMsgService.handleError));
   }
   getCountryByCode(code) {
-    let url = `https://restcountries.eu/rest/v2/alpha/`
+    let url = `https://restcountries.com/v3.1/alpha/`
       return this.http
               .get(url + code)
               .pipe(catchError(this.processHTTPMsgService.handleError));
