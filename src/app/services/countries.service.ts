@@ -12,7 +12,7 @@ export class CountriesService {
     private processHTTPMsgService: ProcessHttpmsgService) { }
 
   getCountries() {
-    let url = `https://restcountries.eu/rest/v2/all`;
+    let url = `https://restcountries.com/v3.1/all`;
     return this.http
     .get(url)
     .pipe(catchError(this.processHTTPMsgService.handleError));
