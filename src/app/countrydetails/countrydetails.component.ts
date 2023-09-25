@@ -34,7 +34,7 @@ export class CountrydetailsComponent implements OnInit {
         this.languages = Object.keys(country[0].languages);
         this.borders = [];
         this.country = country;
-        if (Object.hasOwn(country, 'borders')) {
+        if (country.hasOwnProperty("borders")) {
           this.code = country['borders'];
           for (let code of this.code) {
             this.countriesService.getCountryByCode(code).subscribe(country => {
