@@ -31,8 +31,10 @@ export class CountrydetailsComponent implements OnInit {
       .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
       .subscribe(country => {
         console.log(country);
-        this.currencies = Object.keys(country[0].currencies);
-        this.languages = Object.keys(country[0].languages);
+        console.log(country[0].currencies);
+        console.log(country[0].languages);
+        // this.currencies = Object.keys(country[0].currencies);
+        // this.languages = Object.keys(country[0].languages);
         this.borders = [];
         this.country = country;
         this.code = this.country[0].cca2;
