@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       .subscribe( countries => {
         this.countries = countries;
         this.countriesCopy = countries;
-        this.name = countries[0]['name'];
+        this.name = countries[0]['name'].official;
         console.log(this.countries);
         console.log(this.name);
       },
