@@ -24,11 +24,11 @@
   </div>
   <!-- flags section-->
   <div class="countries-container" fxLayoutAlign="space-between center" (click)="onClick()">
-    <div *ngFor="let country of countries" [routerLink]="['/countrydetail',country.name]"
+    <div *ngFor="let country of countries" [routerLink]="['/countrydetail',country.name.official]"
      fxLayout="column" class="country">
-      <img class="flag" src={{country.flag}} alt="flag">
+      <img class="flag" src={{country.flags.png}} alt="flag">
       <div class="information">
-        <h2>{{country.name}}</h2>
+        <h2>{{country.name.official}}</h2>
         <p>Population: <span class="grey">{{country.population}}</span></p>
         <p>Region: <span class="grey">{{country.region}}</span></p>
         <p>Capital: <span class="grey">{{country.capital}}</span></p>
