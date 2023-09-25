@@ -19,6 +19,8 @@ export class CountrydetailsComponent implements OnInit {
   borderCountry;
   code;
   borders=[];
+  currencies = [];
+  languages = [];
   constructor(private route: ActivatedRoute,
     private location: Location,
     private countriesService: CountriesService,
@@ -29,17 +31,17 @@ export class CountrydetailsComponent implements OnInit {
       .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
       .subscribe(country => {
         console.log(country);
+        this.currencies = Object.keys(country[0].currencies);
+        this.languages = Object.keys(country[0].languages);
         this.borders = [];
         this.country = country;
-        this.code = this.country[0].borders;
-        for(let code of this.code){
-          this.countriesService.getCountryByCode(code).subscribe(country => {
-            this.borders.push(country);
-            // this.borderCountry = country;
-            // console.log(country);
-            // console.log(this.borders);
-          })
-        }
+        this.code = this.country[0].cca2;
+        this.countriesService.getCountryByCode(code).subscribe(country => {
+          this.borders = country.borders;
+          // this.borderCountry = country;
+          // console.log(country);
+          // console.log(this.borders);
+        })
         console.log(country[0].name);
         this.visibility = 'shown';},
         errmess => this.errMess = <any>errmess);
