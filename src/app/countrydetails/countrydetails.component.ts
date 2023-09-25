@@ -28,6 +28,7 @@ export class CountrydetailsComponent implements OnInit {
     this.route.params
       .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
       .subscribe(country => {
+        console.log(country);
         this.borders = [];
         this.country = country;
         this.code = this.country[0].borders;
@@ -39,7 +40,6 @@ export class CountrydetailsComponent implements OnInit {
             // console.log(this.borders);
           })
         }
-        console.log(country);
         console.log(country[0].name);
         this.visibility = 'shown';},
         errmess => this.errMess = <any>errmess);
