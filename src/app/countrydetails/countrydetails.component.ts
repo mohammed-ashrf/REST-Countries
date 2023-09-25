@@ -34,9 +34,14 @@ export class CountrydetailsComponent implements OnInit {
         this.languages = Object.keys(country[0].languages);
         this.borders = [];
         this.country = country;
-        this.countriesService.getCountryByCode(this.country[0].cca2).subscribe(country => {
-          console.log(country);
-        });
+        if (country.borders) {
+          this.code = country.borders;
+          for (let code of this.code) {
+            this.countriesService.getCountryByCode(code).subscribe(country => {
+              this.borders.push(country);
+            });
+          }
+        };
         this.visibility = 'shown';},
         errmess => this.errMess = <any>errmess);
   }
