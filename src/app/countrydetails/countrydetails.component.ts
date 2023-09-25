@@ -31,19 +31,18 @@ export class CountrydetailsComponent implements OnInit {
       .pipe(switchMap((params: Params) => {this.visibility = 'hidden'; return this.countriesService.getCountry(params ['name']); }))
       .subscribe(country => {
         console.log(country);
-        console.log(country[0].currencies);
-        console.log(country[0].languages);
-        // this.currencies = Object.keys(country[0].currencies);
-        // this.languages = Object.keys(country[0].languages);
+        console.log(Object.keys(country[0].currencies));
+        this.currencies = Object.keys(country[0].currencies);
+        this.languages = Object.keys(country[0].languages);
         this.borders = [];
         this.country = country;
-        this.code = this.country[0].cca2;
-        this.countriesService.getCountryByCode(code).subscribe(country => {
-          this.borders = country.borders;
+        this.countriesService.getCountryByCode(this.country[0].cca2).subscribe(country => {
+          // this.borders.push(country);
+          console.log(country);
           // this.borderCountry = country;
           // console.log(country);
           // console.log(this.borders);
-        })
+        });
         console.log(country[0].name);
         this.visibility = 'shown';},
         errmess => this.errMess = <any>errmess);
