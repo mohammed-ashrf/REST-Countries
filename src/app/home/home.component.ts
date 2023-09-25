@@ -43,11 +43,15 @@ export class HomeComponent implements OnInit {
     this.countryName = this.input.value;
     this.countryName.toUpperCase();
     console.log(this.countryName);
-    this.countriesService.getCountry(this.countryName).subscribe( country => {
-      console.log(country);
-      this.countries = country;
-    },
-    errmess => this.errMess = <any>errmess);
+    if (this.countryName === '') {
+      this.countries = this.countriesCopy;
+    }else {
+      this.countriesService.getCountry(this.countryName).subscribe( country => {
+        console.log(country);
+        this.countries = country;
+      },
+      errmess => this.errMess = <any>errmess);
+    }
   }
   onSelect(){
     this.dropdownMenu = document.getElementById('region');
