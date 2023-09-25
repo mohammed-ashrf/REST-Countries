@@ -28,7 +28,7 @@
             <p class="paragragh">Capital: <span class="gray">{{country[0].capital}}</span></p>
           </div>
           <div class="information-2nd">
-            <p class="paragragh">Top Level Domain: <span class="gray">{{country[0].topLevelDomain}}</span></p>
+            <p class="paragragh">Top Level Domain: <span class="gray"><span *ngFor="let tld of country[0].tld" class="gray"> {{tld}},</span></span></p>
             <p class="paragragh">Currencies: <span *ngFor="let Currency of currencies" class="gray"> {{Currency}},</span></p>
             <p class="paragragh">Languages: <span *ngFor="let Language of languages" class="gray">{{Language}},</span></p>
           </div>

@@ -26,7 +26,7 @@
   <div class="countries-container" fxLayoutAlign="space-between center" (click)="onClick()">
     <div *ngFor="let country of countries" [routerLink]="['/countrydetail',country.name.official]"
      fxLayout="column" class="country">
-      <img class="flag" src={{country.flags.png}} alt="flag">
+      <img class="flag" src={{country.flags.png}} alt={{country.flags.alt}}>
       <div class="information">
         <h2>{{country.name.official}}</h2>
         <p>Population: <span class="grey">{{country.population}}</span></p>
